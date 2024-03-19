@@ -621,7 +621,7 @@ Mat MultiImagesFusion::SPDMEF() {
             //这里idx_matrix.size就是size_images_num，就是选取图片的数量
             for (int k = 0; k < idx_matrix.size(); k++) {
                 Mat tmp_one_block;
-                int tmp_image_index = idx_matrix[k].at<float>(0,0);
+                int tmp_image_index = idx_matrix[k].at<float>(i, j);
                 images_gray_float_mat_[tmp_image_index].rowRange(i, i+offset).colRange(j, j+offset).copyTo(tmp_one_block);
                 tmp_blocks.push_back(tmp_one_block);
             }
